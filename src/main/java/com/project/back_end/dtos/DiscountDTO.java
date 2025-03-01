@@ -6,6 +6,9 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,18 +26,26 @@ public class DiscountDTO {
     @Field("_id")
     private ObjectId id;
 
+    @NotBlank(message = "Discount's code is required")
+    @NotNull(message = "Discount's code cannot be null")
     private String code;
     
     @Field("discount_type")
     private String discountType;
 
     @Field("discount_value")
+    @NotBlank(message = "Discount's value is required")
+    @Min(value = 0, message = "Discount's value must be greater than 0")
     private int discountValue;
 
     @Field("min_order_value")
+    @NotBlank(message = "Discount's minimum order value is required")
+    @Min(value = 0, message = "Discount's minimum order value must be greater than 0")
     private double minOrderValue;
 
     @Field("max_discount")
+    @NotBlank(message = "Discount's maximum discount is required")
+    @Min(value = 100, message = "Discount's maximum discount must be greater than 0")
     private double maxDiscount;
 
     @Field("apply_to")

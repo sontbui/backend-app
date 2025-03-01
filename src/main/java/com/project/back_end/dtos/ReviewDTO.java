@@ -4,6 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,13 +24,17 @@ public class ReviewDTO {
     private ObjectId id;
 
     @Field("user_id") // Foreign key
+    @NotNull(message = "User ID is required")
     private String userId;
 
     @Field("product_id") // Foreign key
+    @NotNull(message = "Product ID is required")
     private String productId;
 
+    @NotNull(message = "Rating is required")
     private double rating;
 
+    @NotNull(message = "Comment is required")
     private String comment;
 
     @Field("created_at")

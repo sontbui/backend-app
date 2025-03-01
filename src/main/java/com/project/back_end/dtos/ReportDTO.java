@@ -6,6 +6,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,14 +28,18 @@ public class ReportDTO {
     private Date reportDate;
 
     @Field("total_revenue")
+    @Size(min = 1, max = 1000000000, message = "Total revenue must be between 1 and 1000000000")
     private double totalRevenue;
 
     @Field("total_orders")
+    @Size(min = 1, max = 1000000000, message = "Total orders must be between 1 and 1000000000")
     private int totalOrders;
 
     @Field("total_expenses")
+    @Size(min = 1, max = 1000000000, message = "Total expense must be between 1 and 1000000000")
     private double totalExpenses;
 
+    @Size(min = 1, max = 1000000000, message = "Total profit must be between 1 and 1000000000")
     private double profit;
 
     @Field("created_at")

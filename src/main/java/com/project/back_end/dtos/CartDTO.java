@@ -3,6 +3,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,9 +23,11 @@ public class CartDTO {
     private ObjectId id;
 
     @Field("user_id") // Foreign key
+    @NotBlank(message = "User ID is mandatory")
     private String userId;
 
     @Field("product_variant_id") // Foreign key
+    @NotBlank(message = "Product Variant ID is mandatory")
     private String productVariantId;
 
     private int quantity;
@@ -34,5 +37,6 @@ public class CartDTO {
 
     @Field("updated_at")
     private String updatedAt;
+    
     private String status;
 }

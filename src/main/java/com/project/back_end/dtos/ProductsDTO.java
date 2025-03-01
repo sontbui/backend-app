@@ -6,6 +6,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -25,10 +26,12 @@ public class ProductsDTO {
 
     private String name;
 
-    @Field("brand_id") // Foreign key   
+    @Field("brand_id") // Foreign key  
+    @NotNull(message = "Brand's id is required") 
     private String brandId;
 
     @Field("category_id") // Foreign key
+    @NotNull(message = "Category's id is required")
     private String categoryId;
 
     private double price;
@@ -41,6 +44,7 @@ public class ProductsDTO {
     private String status;
 
     @Field("material_id") // Foreign key
+    @NotNull(message = "Material's id is required")
     private String materialId;
 
     @Field("created_at")

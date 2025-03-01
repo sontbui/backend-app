@@ -4,6 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,6 +23,7 @@ public class PaymentDTO {
     private ObjectId id;
 
     @Field("order_id") // Foreign key
+    @NotNull(message = "Order ID is required")
     private String orderId;
 
     @Field("payment_method")
@@ -31,6 +33,7 @@ public class PaymentDTO {
     private String status;
 
     @Field("transaction_id")
+    @NotNull(message = "Transaction ID is required")
     private String transactionId;
 
     private double amount;

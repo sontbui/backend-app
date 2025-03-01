@@ -4,6 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -23,9 +24,11 @@ public class OrderItemDTO {
     private ObjectId id;
 
     @Field("order_id") // Foreign key
+    @NotNull(message = "Order ID is required")
     private String orderId;
 
     @Field("product_variant_id") // Foreign key
+    @NotNull(message = "Product Variant ID is required")
     private String productVariantId;
 
     private int quantity;

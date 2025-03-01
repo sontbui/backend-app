@@ -20,7 +20,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Document(collection = "users")
 @Builder
-public class Users {
+public class User {
  
     @JsonProperty("_id")
     private ObjectId id;
@@ -34,7 +34,9 @@ public class Users {
     private String address;
     private String role;
     private String avatar_url;
-    private boolean is_active;
+    
+    @Field("is_active")
+    private boolean isActive;
     
     @Field("last_login")
     private Date lastLogin;

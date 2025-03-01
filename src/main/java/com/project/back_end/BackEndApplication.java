@@ -16,18 +16,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "com.project.back_end.repositories")
 public class BackEndApplication {
 
-    @Value("${JWT_SECRET}")
-    private static String jwtSecret = System.getenv("JWT_SECRET");
-    public static void main(String[] args) {
-        Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
-        jwtSecret = dotenv.get("JWT_SECRET");
-        if (jwtSecret == null) {
-            System.out.println("⚠️ JWT_SECRET is not set in .env file. Please set it to a random string.");
-            System.exit(1);
-        }
-        SecretKey key = Keys.secretKeyFor(io.jsonwebtoken.SignatureAlgorithm.HS512);
-        String base64Key = Base64.getEncoder().encodeToString(key.getEncoded());
-        System.out.println("⚠️ New JWT Secret Key (Only for local development): " + base64Key);
+       public static void main(String[] args) {
         SpringApplication.run(BackEndApplication.class, args);
     }
 }

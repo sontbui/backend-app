@@ -1,56 +1,52 @@
 package com.project.back_end.dtos;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-import lombok.*;
-
-import java.util.List;
-import java.util.Map;
+import java.util.ArrayList;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-@Document(collection = "products")
-@Data
-@Getter
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 @Setter
-@AllArgsConstructor
+@Getter
 @NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "products")
 @Builder
 public class ProductsDTO {
 
-    @JsonProperty("_id")
+    @Field("_id")
     private ObjectId id;
 
-    @NotBlank(message = "Product name is required")
-    @Size(min = 2, max = 200, message = "Product name must be between 2 and 200 characters")
-    private String name; 
+    private String name;
 
-    @JsonProperty("brand_id")
+    @Field("brand_id") // Foreign key   
     private String brandId;
 
-    @Field("category_id")
-    @JsonProperty("category_id")
+    @Field("category_id") // Foreign key
     private String categoryId;
 
-    @Min(value = 1, message = "Price must be greater than 0")
-    @Max(value = 1000000, message = "Price must be less than 1000000")
     private double price;
 
-    @Field("description")
-    private Map<String, String> description;
+    private Object desciption;
 
-    @Size(min = 2, max = 255, message = "Each image URL must be between 2 and 255 characters")
     @Field("image_urls")
-    private List<String> imageUrls;
+    private ArrayList<String> imageUrls; 
 
-    @JsonProperty("created_at")
+    private String status;
+
+    @Field("material_id") // Foreign key
+    private String materialId;
+
+    @Field("created_at")
     private String createdAt;
 
-    @JsonProperty("updated_at")
+    @Field("updated_at")
     private String updatedAt;
+    
 }

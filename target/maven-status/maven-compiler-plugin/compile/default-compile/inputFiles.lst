@@ -1,4 +1,5 @@
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/BackEndApplication.java
+/Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/components/JwtTokentUtils.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/dtos/BrandDTO.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/dtos/CartDTO.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/dtos/CategoryDTO.java
@@ -32,7 +33,10 @@
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Report.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Revenues.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Review.java
+/Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Role.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/SaveProduct.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Shipping.java
-/Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Users.java
+/Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/Token.java
+/Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/models/User.java
+/Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/repositories/TokenRepository.java
 /Users/sontbui/Documents/workspace/do.an/back-end/src/main/java/com/project/back_end/services/MongoDBConnectionService.java

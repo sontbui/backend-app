@@ -17,7 +17,6 @@ import lombok.Setter;
 @Document(collection = "reviews")
 @Builder
 public class Review {
-    
 
     @Field("_id")
     private ObjectId id;
@@ -34,4 +33,5 @@ public class Review {
 
     @Field("created_at")
     private String createdAt;
+
 }

@@ -6,8 +6,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

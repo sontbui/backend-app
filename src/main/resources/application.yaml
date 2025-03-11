@@ -11,6 +11,10 @@ spring:
     mongodb:
       uri: ${MONGO_URI}
       database: ${MONGO_DATABASE}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 
 management:
   endpoints:

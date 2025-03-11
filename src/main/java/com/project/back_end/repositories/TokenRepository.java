@@ -1,7 +1,5 @@
 package com.project.back_end.repositories;
 
-
-import com.project.back_end.models.Role;
 import com.project.back_end.models.Token;
 import com.project.back_end.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
